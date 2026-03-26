@@ -2,8 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 */12 * * *"   # har 12 ghante me run
-
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 jobs:
@@ -11,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+
       - uses: Platane/snk@v3
         with:
           github_user_name: rajmanvi17
